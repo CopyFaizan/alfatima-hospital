@@ -1,105 +1,102 @@
 import Image from "next/image";
 
+const stats = [
+  { value: "4.9", label: "Patient Rating" },
+  { value: "20+", label: "Specialists" },
+  { value: "24/7", label: "Emergency" },
+  { value: "98%", label: "Satisfaction" },
+];
+
 export default function Hero() {
   return (
-    <section
-      id="home"
-      className="relative min-h-screen flex items-center overflow-hidden"
-    >
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/banner.png"
-          alt="Al-Fatima Hospital"
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        {/* Dark overlay for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0d1b45]/85 via-[#0d1b45]/60 to-transparent" />
-      </div>
+    <section id="home" className="min-h-screen bg-[#F5F6FA] flex items-stretch pt-16">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 w-full flex flex-col lg:flex-row items-center gap-10 py-16 lg:py-0">
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pt-24 pb-16 w-full">
-        <div className="max-w-2xl">
+        {/* ── Left column ── */}
+        <div className="flex-1 flex flex-col justify-center">
+
           {/* Trust badge */}
-          <div className="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-8 animate-fade-in">
-            <div className="flex -space-x-2">
-              {[0, 1, 2].map((i) => (
-                <div
-                  key={i}
-                  className="w-7 h-7 rounded-full border-2 border-white/60 bg-gradient-to-br from-blue-300 to-blue-500"
-                />
+          <div className="inline-flex items-center gap-3 mb-10 animate-fade-in">
+            <div className="flex -space-x-2.5">
+              {["bg-blue-400","bg-emerald-400","bg-violet-400"].map((c, i) => (
+                <div key={i} className={`w-8 h-8 rounded-full border-2 border-white ${c}`} />
               ))}
             </div>
-            <span className="text-white/90 text-sm font-medium">
-              Trusted by thousands of patients in Karachi
+            <span className="text-sm font-medium text-gray-500">
+              10 000+ <span className="text-gray-400">Healthy patients</span>
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6 animate-fade-up">
-            We are <span className="text-[#ef4444]">expert</span>
-            <br />
-            medical specialists.
+          {/* Headline */}
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 leading-[1.1] mb-6 animate-fade-up">
+            We are here to<br />
+            help you stay<br />
+            <span className="text-[#C41E3A]">healthy.</span>
           </h1>
 
-          <p className="text-white/75 text-lg md:text-xl mb-10 leading-relaxed animate-fade-up delay-100">
-            Al-Fatima Hospital delivers compassionate, world-class care with
-            20+ specialist consultants and 24/7 emergency services — right
-            in the heart of Gulshan-e-Iqbal, Karachi.
+          <p className="text-gray-500 text-lg mb-10 leading-relaxed max-w-md animate-fade-up delay-100">
+            Al-Fatima Hospital — expert consultants, modern diagnostics, and
+            round-the-clock emergency care in Gulshan-e-Iqbal, Karachi.
           </p>
 
-          <div className="flex flex-wrap gap-4 animate-fade-up delay-200">
+          {/* CTA */}
+          <div className="flex flex-wrap gap-3 mb-16 animate-fade-up delay-200">
             <a
               href="#contact"
-              className="inline-flex items-center gap-2 bg-[#C41E3A] hover:bg-[#a8192f] text-white font-semibold px-7 py-3.5 rounded-full transition-colors duration-200 text-sm"
+              className="inline-flex items-center gap-2 bg-[#1B2D6B] text-white text-sm font-semibold px-7 py-3.5 rounded-full hover:bg-[#162359] transition-colors"
             >
-              Free Consultation
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
+              Make an appointment
             </a>
             <a
-              href="#doctors"
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 text-white font-semibold px-7 py-3.5 rounded-full transition-colors duration-200 text-sm"
+              href="#services"
+              className="inline-flex items-center gap-2 bg-white border border-gray-200 text-gray-700 text-sm font-semibold px-7 py-3.5 rounded-full hover:border-gray-300 transition-colors"
             >
-              View Doctors
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M5 12h14M12 5l7 7-7 7" />
-              </svg>
+              Our services
             </a>
           </div>
+
+          {/* Stats row */}
+          <div className="flex flex-wrap gap-8 animate-fade-up delay-300">
+            {stats.map((s) => (
+              <div key={s.label}>
+                <p className="text-3xl font-bold text-[#1B2D6B]">{s.value}</p>
+                <p className="text-xs text-gray-400 mt-0.5 font-medium">{s.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Floating info cards */}
-        <div className="absolute bottom-10 right-8 hidden lg:flex flex-col gap-4 animate-fade-up delay-300">
-          <div className="bg-white rounded-2xl shadow-xl p-5 min-w-[200px]">
-            <p className="text-xs text-gray-500 font-medium uppercase tracking-wide mb-1">Trusted Rate</p>
-            <p className="text-4xl font-bold text-[#1B2D6B]">98%</p>
-            <p className="text-xs text-gray-500 mt-1">Patients satisfied with our care</p>
-          </div>
-          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-5 min-w-[200px]">
-            <div className="flex flex-col gap-2">
-              {["Compassionate", "Expert", "Accessible"].map((tag) => (
-                <div
-                  key={tag}
-                  className="flex items-center gap-2"
-                >
-                  <span className="w-2 h-2 rounded-full bg-[#C41E3A] shrink-0" />
-                  <span className="text-white text-sm font-medium">{tag}</span>
-                </div>
-              ))}
+        {/* ── Right column — image panel ── */}
+        <div className="flex-1 relative h-[520px] lg:h-[calc(100vh-80px)] max-h-[700px] w-full rounded-3xl overflow-hidden shadow-xl animate-fade-in delay-200">
+          <Image
+            src="/banner.png"
+            alt="Al-Fatima Hospital"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+          {/* Subtle overlay to unify colors */}
+          <div className="absolute inset-0 bg-[#1B2D6B]/10" />
+
+          {/* Floating card */}
+          <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md rounded-2xl p-5 flex items-center gap-4">
+            <div className="w-10 h-10 rounded-xl bg-[#C41E3A]/10 flex items-center justify-center shrink-0">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C41E3A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg>
             </div>
+            <div>
+              <p className="text-sm font-semibold text-gray-900">24/7 Emergency Services</p>
+              <p className="text-xs text-gray-400 mt-0.5">Always here when you need us most</p>
+            </div>
+            <span className="ml-auto flex items-center gap-1.5 text-xs font-semibold text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full">
+              <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
+              Open now
+            </span>
           </div>
         </div>
-      </div>
 
-      {/* Bottom wave */}
-      <div className="absolute bottom-0 left-0 right-0 z-10">
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 60L1440 60L1440 20C1200 60 960 0 720 20C480 40 240 0 0 20L0 60Z" fill="white" />
-        </svg>
       </div>
     </section>
   );

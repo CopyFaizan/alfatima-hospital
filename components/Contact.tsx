@@ -1,90 +1,101 @@
+const info = [
+  {
+    label: "Address",
+    value: "D-1 Block 4, Gulshan-e-Iqbal\nNear Disco Bakery, Karachi",
+    color: "bg-[#1B2D6B]",
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+      </svg>
+    ),
+  },
+  {
+    label: "Phone",
+    value: "+92 213 888 5945\n+92 330 1252236",
+    color: "bg-[#C41E3A]",
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.5 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.44 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.4a16 16 0 0 0 5.7 5.7l.79-.79a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/>
+      </svg>
+    ),
+  },
+  {
+    label: "Emergency",
+    value: "Open 24 hours\n7 days a week",
+    color: "bg-emerald-600",
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+      </svg>
+    ),
+  },
+  {
+    label: "Website",
+    value: "www.alfatimahospital\n.com.pk",
+    color: "bg-violet-600",
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+    ),
+  },
+];
+
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 bg-white">
+    <section id="contact" className="py-24 bg-[#F5F6FA]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
+
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="inline-block text-[#C41E3A] text-xs font-bold uppercase tracking-widest mb-3">
+          <span className="text-xs font-bold uppercase tracking-widest text-[#C41E3A] mb-3 block">
             Find Us
           </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1B2D6B] mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Contact & Location
           </h2>
-          <p className="text-gray-500 max-w-lg mx-auto text-base">
-            Visit us, call us, or drop by. We are open seven days a week for OPD and around the clock for emergencies.
+          <p className="text-gray-400 max-w-md mx-auto text-base">
+            Visit us in Gulshan-e-Iqbal or call to book. Walk-ins welcome for OPD.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
-          {/* Contact cards */}
-          <div className="flex flex-col gap-5">
-            {/* Address */}
-            <div className="flex items-start gap-5 bg-[#F8F9FC] rounded-2xl p-6">
-              <div className="w-11 h-11 rounded-xl bg-[#1B2D6B] flex items-center justify-center shrink-0">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" /><circle cx="12" cy="10" r="3" />
-                </svg>
-              </div>
-              <div>
-                <p className="font-semibold text-[#1B2D6B] mb-1">Address</p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  D-1 Block 4, Gulshan-e-Iqbal<br />
-                  Near Disco Bakery, Karachi
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+          {/* Info grid */}
+          <div className="grid grid-cols-2 gap-4">
+            {info.map((item) => (
+              <div key={item.label} className="bg-white rounded-2xl p-5 border border-gray-100">
+                <div className={`w-9 h-9 ${item.color} rounded-xl flex items-center justify-center mb-4`}>
+                  {item.icon}
+                </div>
+                <p className="text-xs font-bold uppercase tracking-wide text-gray-400 mb-1">{item.label}</p>
+                <p className="text-sm font-medium text-gray-800 leading-relaxed whitespace-pre-line">
+                  {item.value}
                 </p>
               </div>
-            </div>
+            ))}
 
-            {/* Phone */}
-            <div className="flex items-start gap-5 bg-[#F8F9FC] rounded-2xl p-6">
-              <div className="w-11 h-11 rounded-xl bg-[#C41E3A] flex items-center justify-center shrink-0">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.5 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.44 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.4a16 16 0 0 0 5.7 5.7l.79-.79a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z" />
-                </svg>
-              </div>
+            {/* CTA card spanning full width */}
+            <div className="col-span-2 bg-[#1B2D6B] rounded-2xl p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <p className="font-semibold text-[#1B2D6B] mb-1">Phone</p>
-                <a href="tel:+922138885945" className="block text-gray-600 text-sm hover:text-[#C41E3A] transition-colors">
-                  +92 213 888 5945
-                </a>
-                <a href="tel:+923301252236" className="block text-gray-600 text-sm hover:text-[#C41E3A] transition-colors">
-                  +92 330 1252236
-                </a>
+                <p className="font-bold text-white text-sm">Ready to book an appointment?</p>
+                <p className="text-white/60 text-xs mt-0.5">Call us directly — we'll find the right specialist for you.</p>
               </div>
-            </div>
-
-            {/* Website */}
-            <div className="flex items-start gap-5 bg-[#F8F9FC] rounded-2xl p-6">
-              <div className="w-11 h-11 rounded-xl bg-[#1B2D6B] flex items-center justify-center shrink-0">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10" /><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-                </svg>
-              </div>
-              <div>
-                <p className="font-semibold text-[#1B2D6B] mb-1">Website</p>
-                <p className="text-gray-600 text-sm">www.alfatimahospital.com.pk</p>
-              </div>
-            </div>
-
-            {/* Hours */}
-            <div className="flex items-start gap-5 bg-[#F8F9FC] rounded-2xl p-6">
-              <div className="w-11 h-11 rounded-xl bg-[#C41E3A] flex items-center justify-center shrink-0">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" />
-                </svg>
-              </div>
-              <div>
-                <p className="font-semibold text-[#1B2D6B] mb-1">Emergency</p>
-                <p className="text-gray-600 text-sm">Open 24 hours, 7 days a week</p>
-                <p className="text-gray-500 text-xs mt-0.5">OPD hours vary by consultant</p>
-              </div>
+              <a
+                href="tel:+922138885945"
+                className="shrink-0 inline-flex items-center gap-2 bg-white text-[#1B2D6B] text-sm font-bold px-5 py-2.5 rounded-full hover:bg-gray-100 transition-colors"
+              >
+                Call now
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
             </div>
           </div>
 
-          {/* Map embed */}
-          <div className="rounded-3xl overflow-hidden border border-gray-100 shadow-lg h-[480px] bg-[#e8eef4] flex items-center justify-center">
+          {/* Map */}
+          <div className="rounded-3xl overflow-hidden border border-gray-100 shadow-sm h-[400px]">
             <iframe
-              title="Al-Fatima Hospital Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.3!2d67.0688!3d24.9204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zQWwtRmF0aW1hIEhvc3BpdGFsLCBHdWxzaGFuLWUtSXFiYWwsIEthcmFjaGk!5e0!3m2!1sen!2spk!4v1684756827!5m2!1sen!2spk"
+              title="Al-Fatima Hospital Map"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.3!2d67.0688!3d24.9204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zAl-Fatima+Hospital!5e0!3m2!1sen!2spk!4v1684756827!5m2!1sen!2spk"
               width="100%"
               height="100%"
               style={{ border: 0 }}
