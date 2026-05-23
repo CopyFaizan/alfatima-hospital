@@ -67,13 +67,13 @@ export default function Hero() {
           />
         </div>
 
-        {/* Right doctor */}
+        {/* Right image */}
         <div className="hidden md:block relative w-44 h-64 rounded-3xl overflow-hidden shadow-xl shrink-0 mb-6">
           <Image
-            src="/doctors/dr-fahad-hanif.png"
-            alt="Dr. Fahad Hanif"
+            src="/hero-1.jpg"
+            alt="Al-Fatima Hospital"
             fill
-            className="object-cover object-top"
+            className="object-cover object-center"
           />
         </div>
       </div>
