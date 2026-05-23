@@ -1,11 +1,5 @@
 import Image from "next/image";
 
-const stats = [
-  { value: "20+", label: "Specialists" },
-  { value: "24/7", label: "Emergency" },
-  { value: "98%",  label: "Satisfaction" },
-];
-
 export default function Hero() {
   return (
     <section id="home" className="bg-[#EEF2FF] pt-16 overflow-hidden">
@@ -71,15 +65,6 @@ export default function Hero() {
             className="object-cover object-center"
             sizes="(max-width: 768px) 100vw, 600px"
           />
-          {/* Stats bar at bottom of image */}
-          <div className="absolute bottom-0 left-0 right-0 bg-white/90 backdrop-blur-sm px-5 py-3.5 flex justify-around">
-            {stats.map((s) => (
-              <div key={s.label} className="text-center">
-                <p className="text-base font-bold text-gray-900">{s.value}</p>
-                <p className="text-[10px] text-gray-400 font-medium tracking-wide uppercase">{s.label}</p>
-              </div>
-            ))}
-          </div>
         </div>
 
         {/* Right doctor */}
