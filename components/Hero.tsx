@@ -23,13 +23,17 @@ export default function Hero() {
       {/* Overlay — strong at top for headline, dark at bottom for content */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/80" />
 
-      {/* ── TOP: Headline in the sky ── */}
-      <div className="relative z-10 flex flex-col items-center text-center px-6 pt-32">
+      {/* ── TOP: Headline + description in the sky ── */}
+      <div className="relative z-10 flex flex-col items-center text-center px-6 pt-28 gap-5">
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08]">
           We are here to<br />
           help you stay<br />
           <span className="text-[#ef4444]">healthy.</span>
         </h1>
+        <p className="text-white/70 text-base md:text-lg max-w-md leading-relaxed">
+          Expert consultants, modern diagnostics, and round-the-clock
+          emergency care — Gulshan-e-Iqbal, Karachi.
+        </p>
       </div>
 
       {/* Spacer — pushes bottom content down past the building */}
@@ -37,11 +41,6 @@ export default function Hero() {
 
       {/* ── BOTTOM: Description, buttons, stats, badge — below the building ── */}
       <div className="relative z-10 flex flex-col items-center text-center gap-6 px-6 pb-20">
-
-        <p className="text-white/75 text-base md:text-lg max-w-lg mx-auto leading-relaxed">
-          Expert consultants, modern diagnostics, and round-the-clock
-          emergency care — Gulshan-e-Iqbal, Karachi.
-        </p>
 
         {/* CTAs */}
         <div className="flex flex-wrap gap-3 justify-center">
