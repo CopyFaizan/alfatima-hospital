@@ -92,10 +92,10 @@ export default function Contact() {
           </div>
 
           {/* Map */}
-          <div className="rounded-3xl overflow-hidden border border-gray-100 shadow-sm h-[400px]">
+          <div className="relative rounded-3xl overflow-hidden border border-gray-100 shadow-sm h-[400px]">
             <iframe
               title="Al-Fatima Hospital Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.3!2d67.0688!3d24.9204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zAl-Fatima+Hospital!5e0!3m2!1sen!2spk!4v1684756827!5m2!1sen!2spk"
+              src="https://maps.google.com/maps?q=Al+Fatima+Hospital,+Block+4+Gulshan-e-Iqbal,+Karachi,+75300,+Pakistan&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -103,6 +103,18 @@ export default function Contact() {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
+            {/* Get Directions button */}
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=Al+Fatima+Hospital,+Block+4+Gulshan-e-Iqbal,+Karachi,+75300,+Pakistan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute bottom-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-2 bg-[#1B2D6B] text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg hover:bg-[#162359] transition-colors whitespace-nowrap"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              Get Directions
+            </a>
           </div>
         </div>
       </div>
