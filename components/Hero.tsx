@@ -20,22 +20,30 @@ export default function Hero() {
         sizes="100vw"
       />
 
-      {/* Overlay — strong at top for text, fades in middle, darkens again at bottom */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/35 to-black/65" />
+      {/* Overlay — strong at top for headline, dark at bottom for content */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/80" />
 
-      {/* ── Top zone: headline + subtitle + CTAs ── */}
-      <div className="relative z-10 flex flex-col items-center text-center px-6 pt-32 pb-10">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08] mb-6">
+      {/* ── TOP: Headline in the sky ── */}
+      <div className="relative z-10 flex flex-col items-center text-center px-6 pt-32">
+        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08]">
           We are here to<br />
           help you stay<br />
           <span className="text-[#ef4444]">healthy.</span>
         </h1>
+      </div>
 
-        <p className="text-white/65 text-base md:text-lg max-w-lg mx-auto leading-relaxed mb-8">
+      {/* Spacer — pushes bottom content down past the building */}
+      <div className="flex-1" />
+
+      {/* ── BOTTOM: Description, buttons, stats, badge — below the building ── */}
+      <div className="relative z-10 flex flex-col items-center text-center gap-6 px-6 pb-20">
+
+        <p className="text-white/75 text-base md:text-lg max-w-lg mx-auto leading-relaxed">
           Expert consultants, modern diagnostics, and round-the-clock
           emergency care — Gulshan-e-Iqbal, Karachi.
         </p>
 
+        {/* CTAs */}
         <div className="flex flex-wrap gap-3 justify-center">
           <a
             href="#contact"
@@ -50,13 +58,10 @@ export default function Hero() {
             Our Services
           </a>
         </div>
-      </div>
 
-      {/* ── Spacer pushes bottom zone down ── */}
-      <div className="flex-1" />
+        {/* Divider */}
+        <div className="w-24 h-px bg-white/20" />
 
-      {/* ── Bottom zone: stats + Google badge ── */}
-      <div className="relative z-10 flex flex-col items-center gap-6 px-6 pb-20">
         {/* Stats */}
         <div className="flex flex-wrap gap-10 justify-center">
           {stats.map((s) => (
@@ -66,9 +71,6 @@ export default function Hero() {
             </div>
           ))}
         </div>
-
-        {/* Divider */}
-        <div className="w-px h-4 bg-white/20" />
 
         {/* Google reviews badge */}
         <div className="inline-flex items-center gap-3 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl px-5 py-3">
@@ -90,6 +92,7 @@ export default function Hero() {
             <span className="text-xs text-white/60 font-medium">118 Google reviews</span>
           </div>
         </div>
+
       </div>
 
       {/* Wave transition */}
