@@ -69,7 +69,7 @@ export default function Hero() {
         {/* ── Right column — image panel ── */}
         <div className="flex-1 relative h-[520px] lg:h-[calc(100vh-80px)] max-h-[700px] w-full rounded-3xl overflow-hidden shadow-xl animate-fade-in delay-200">
           <Image
-            src="/banner.png"
+            src="/hero.png"
             alt="Al-Fatima Hospital"
             fill
             priority
