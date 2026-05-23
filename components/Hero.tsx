@@ -24,8 +24,8 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/80" />
 
       {/* ── TOP: Headline + description in the sky ── */}
-      <div className="relative z-10 flex flex-col items-center text-center px-6 pt-28 gap-5">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.08]">
+      <div className="relative z-10 flex flex-col items-center text-center px-6 pt-24 gap-4">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-[1.12]">
           We are here to<br />
           help you stay<br />
           <span className="text-[#ef4444]">healthy.</span>
