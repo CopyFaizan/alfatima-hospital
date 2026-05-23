@@ -28,12 +28,10 @@ export default function Hero() {
 
         {/* Title in the sky */}
         <div className="animate-fade-up">
-          <p className="text-white/70 text-sm font-semibold uppercase tracking-[0.2em] mb-4">
-            The Power To Heal
-          </p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.05] mb-5">
-            Al-Fatima<br />
-            <span className="text-[#ef4444]">Hospital</span>
+            We are here to<br />
+            help you stay<br />
+            <span className="text-[#ef4444]">healthy.</span>
           </h1>
           <p className="text-white/70 text-base md:text-lg max-w-xl mx-auto leading-relaxed mb-10">
             Expert consultants, modern diagnostics, and round-the-clock
