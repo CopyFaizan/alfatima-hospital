@@ -58,7 +58,7 @@ export default function Navbar() {
         {/* CTA */}
         <a
           href="#contact"
-          className="hidden md:inline-flex items-center border border-[#1B2D6B] text-[#1B2D6B] text-[13px] font-semibold px-5 py-2 rounded-full hover:bg-[#1B2D6B] hover:text-white transition-colors duration-200"
+          className="hidden md:inline-flex items-center bg-gray-900 hover:bg-gray-700 text-white text-[13px] font-semibold px-5 py-2.5 rounded-full transition-colors duration-200"
         >
           Contact Us
         </a>
