@@ -72,7 +72,7 @@ export default function Contact() {
             {/* Left image */}
             <div className="relative rounded-3xl overflow-hidden h-72 md:h-auto min-h-[320px]">
               <Image
-                src="/hospital-side.jpg"
+                src="/smiling.jpeg"
                 alt="Al-Fatima Hospital consultation"
                 fill
                 className="object-cover object-center"
