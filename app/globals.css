@@ -31,3 +31,12 @@ body {
 .delay-200 { animation-delay: 0.2s; }
 .delay-300 { animation-delay: 0.3s; }
 .delay-400 { animation-delay: 0.4s; }
+
+@keyframes scrollUp {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+.animate-scroll-up        { animation: scrollUp 38s linear infinite; }
+.animate-scroll-up-slow   { animation: scrollUp 50s linear infinite; }
+.animate-scroll-up:hover,
+.animate-scroll-up-slow:hover { animation-play-state: paused; }
