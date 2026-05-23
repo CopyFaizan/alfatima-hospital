@@ -1,57 +1,59 @@
+import Image from "next/image";
+
 const featured = [
   {
-    name: "Dr. Rabia Farooqi",
-    specialty: "Gynaecologist",
+    name: "Dr. Abdul Rafay Qazi",
+    specialty: "Orthopedic Surgeon",
     qual: "MBBS, FCPS",
-    days: "Mon, Wed & Fri",
-    time: "7:00 – 8:00 PM",
-    color: "#7C3AED",
-    initial: "RF",
+    days: "Mon & Thu",
+    time: "9:30 – 10:30 PM",
+    color: "#1B2D6B",
+    img: "/doctors/dr-abdul-rafay.png",
   },
   {
-    name: "Dr. Nadeem Azhar",
-    specialty: "Diabetologist",
-    qual: "MBBS, Senior Diabetologist",
-    days: "Mon – Sat",
-    time: "8:00 – 9:00 PM",
-    color: "#EA580C",
-    initial: "NA",
+    name: "Dr. Fahad Hanif",
+    specialty: "Plastic Surgeon",
+    qual: "MBBS, FCPS",
+    days: "On Call",
+    time: "On Call",
+    color: "#0891B2",
+    img: "/doctors/dr-fahad-hanif.png",
   },
   {
-    name: "Dr. Muhammad Rafay",
-    specialty: "Neurosurgeon",
+    name: "Dr. Maryam Javed",
+    specialty: "Neuro Physician",
     qual: "MBBS, FCPS",
     days: "Friday",
     time: "3:30 – 4:30 PM",
-    color: "#0891B2",
-    initial: "MR",
+    color: "#7C3AED",
+    img: "/doctors/dr-maryam-javed.png",
   },
   {
-    name: "Dr. Ifrah Uroos",
-    specialty: "Cardiologist",
+    name: "Dr. Raza Mehmood",
+    specialty: "Orthopedic Surgeon",
     qual: "MBBS, FCPS",
-    days: "Wed & Sat",
-    time: "4:30 – 6:30 PM",
-    color: "#C41E3A",
-    initial: "IU",
+    days: "Mon – Fri",
+    time: "5:00 – 6:33 PM",
+    color: "#059669",
+    img: "/doctors/dr-raza-mehmood.png",
   },
   {
-    name: "Dr. Osama Jawed Khan",
-    specialty: "Laparoscopic Surgeon",
+    name: "Dr. Shahrukh Khalil",
+    specialty: "General & Laparoscopic Surgeon",
     qual: "MBBS, FCPS",
-    days: "Mon & Fri",
-    time: "9:00 – 10:00 PM",
-    color: "#1B2D6B",
-    initial: "OJ",
-  },
-  {
-    name: "Dr. Bushra Jilani",
-    specialty: "Dermatologist",
-    qual: "MBBS, Diploma Dermatology",
-    days: "Tue & Wed",
+    days: "Tue & Fri",
     time: "5:00 – 6:00 PM",
+    color: "#C41E3A",
+    img: "/doctors/dr-shahrukh-khalil.png",
+  },
+  {
+    name: "Dr. Zubda Malik",
+    specialty: "Urologist",
+    qual: "MBBS, FCPS",
+    days: "Mon – Fri",
+    time: "2:00 – 5:00 PM",
     color: "#DB2777",
-    initial: "BJ",
+    img: "/doctors/dr-zubda-malik.png",
   },
 ];
 
@@ -86,39 +88,51 @@ export default function Doctors() {
           {featured.map((doc) => (
             <div
               key={doc.name}
-              className="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200"
+              className="bg-white rounded-2xl border border-gray-100 hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 overflow-hidden"
             >
-              {/* Avatar + name */}
-              <div className="flex items-center gap-4 mb-5">
-                <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center text-white font-bold text-base shrink-0"
+              {/* Photo */}
+              <div
+                className="relative h-52 w-full flex items-end justify-center overflow-hidden"
+                style={{ backgroundColor: `${doc.color}12` }}
+              >
+                <Image
+                  src={doc.img}
+                  alt={doc.name}
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                {/* Specialty pill */}
+                <span
+                  className="absolute top-3 left-3 text-white text-[11px] font-semibold px-3 py-1 rounded-full z-10"
                   style={{ backgroundColor: doc.color }}
                 >
-                  {doc.initial}
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900 text-[15px] leading-tight">{doc.name}</p>
-                  <p className="text-sm font-medium mt-0.5" style={{ color: doc.color }}>{doc.specialty}</p>
-                  <p className="text-xs text-gray-400 mt-0.5">{doc.qual}</p>
-                </div>
+                  {doc.specialty}
+                </span>
               </div>
 
-              {/* Divider */}
-              <div className="h-px bg-gray-50 mb-4" />
+              {/* Info */}
+              <div className="p-5">
+                <p className="font-semibold text-gray-900 text-[15px] leading-tight">{doc.name}</p>
+                <p className="text-xs text-gray-400 mt-0.5">{doc.qual}</p>
 
-              {/* Availability */}
-              <div className="flex items-center justify-between text-xs">
-                <div className="flex items-center gap-1.5 text-gray-400">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
-                  </svg>
-                  <span>{doc.days}</span>
-                </div>
-                <div className="flex items-center gap-1.5 text-gray-400">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
-                  </svg>
-                  <span>{doc.time}</span>
+                {/* Divider */}
+                <div className="h-px bg-gray-50 my-4" />
+
+                {/* Schedule */}
+                <div className="flex items-center justify-between text-xs">
+                  <div className="flex items-center gap-1.5 text-gray-400">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
+                    </svg>
+                    <span>{doc.days}</span>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-gray-400">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                    </svg>
+                    <span>{doc.time}</span>
+                  </div>
                 </div>
               </div>
             </div>
