@@ -162,37 +162,6 @@ export default function Testimonials() {
           </div>
         </div>
 
-        {/* Rating summary */}
-        <div className="mt-10 bg-white rounded-2xl border border-gray-100 p-6 flex flex-col sm:flex-row items-center justify-between gap-5">
-          <div className="flex items-center gap-5">
-            <div className="text-center">
-              <p className="text-5xl font-bold text-gray-900">4.8</p>
-              <div className="flex gap-0.5 justify-center mt-1">
-                {[1,2,3,4,5].map((i) => (
-                  <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#F59E0B" stroke="none">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-                  </svg>
-                ))}
-              </div>
-              <p className="text-xs text-gray-400 mt-1">118 Google Reviews</p>
-            </div>
-            <div className="h-12 w-px bg-gray-100 hidden sm:block" />
-            <div>
-              <p className="font-semibold text-gray-900 text-sm">Al Fatima Hospital</p>
-              <p className="text-xs text-gray-400 mt-0.5">Block 4 Gulshan-e-Iqbal, Karachi</p>
-              <p className="text-xs text-[#1B2D6B] font-medium mt-1">Verified on Google Maps</p>
-            </div>
-          </div>
-          <a
-            href="tel:+922138885945"
-            className="shrink-0 inline-flex items-center gap-2 bg-[#1B2D6B] text-white text-sm font-semibold px-6 py-3 rounded-full hover:bg-[#162359] transition-colors"
-          >
-            Book Your Visit
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
-        </div>
 
       </div>
     </section>

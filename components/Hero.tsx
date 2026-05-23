@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 const stats = [
-  { value: "4.9", label: "Patient Rating" },
   { value: "20+", label: "Specialists" },
   { value: "24/7", label: "Emergency" },
   { value: "98%", label: "Satisfaction" },
